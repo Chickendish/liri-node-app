@@ -1,9 +1,10 @@
 var fs = require('fs');
-let Keys = require('./keys');
-let OurTwitter = require('./app/twitter');
-let twitter = new OurTwitter(Keys.twitterKeys)
+var Keys = require('./keys');
+var OurTwitter = require('./app/twitter');
+var twitter = new OurTwitter(Keys.twitterKeys)
 console.log(twitter);
-let command = process.argv[2];
+var Spotify = require('node-spotify-api');
+var command = process.argv[2];
 
 
 switch(command) {
