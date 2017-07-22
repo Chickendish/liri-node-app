@@ -1,6 +1,7 @@
 var fs = require('fs');
 // we require our object of keys to use with our other 
 // Constructors we create
+var Movie = require('./OMBD')
 var Keys = require('./keys');
 // OurTwitter is the entire Object that we created in twitter file
 var OurTwitter = require('./app/twitter');
@@ -16,7 +17,7 @@ var spotify = new OurSpotify(Keys.spotifyKeys);
 
 // our command given to us from the terminal
 var command = process.argv[2];
-var input = process.argv[3];
+var input = process.argv.slice[3];
 
 
 switch(command) {
@@ -24,7 +25,7 @@ switch(command) {
 	break;
 	case "spotify-this-song": spotify.findThisSong(input);
 	break;
-	case "movie-this": console.log("Goddamnit!", command);
+	case "movie-this": Movie.movieRequest(input);
 	break;
 	case "do-what-it-says":
 	break;
